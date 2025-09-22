@@ -1,0 +1,344 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "kernel_",
+        "type": "address",
+        "internalType": "contract Kernel"
+      },
+      { "name": "ohm_", "type": "address", "internalType": "address" },
+      { "name": "sReserve_", "type": "address", "internalType": "address" },
+      { "name": "teller_", "type": "address", "internalType": "address" },
+      { "name": "auctioneer_", "type": "address", "internalType": "address" }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "KernelAdapter_OnlyKernel",
+    "type": "error",
+    "inputs": [
+      { "name": "caller_", "type": "address", "internalType": "address" }
+    ]
+  },
+  {
+    "name": "Policy_ModuleDoesNotExist",
+    "type": "error",
+    "inputs": [
+      { "name": "keycode_", "type": "bytes5", "internalType": "Keycode" }
+    ]
+  },
+  {
+    "name": "Policy_WrongModuleVersion",
+    "type": "error",
+    "inputs": [
+      { "name": "expected_", "type": "bytes", "internalType": "bytes" }
+    ]
+  },
+  {
+    "name": "NextYieldSet",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "nextYield",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "RepoMarket",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "bidAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  { "name": "Shutdown", "type": "event", "inputs": [], "anonymous": false },
+  {
+    "name": "CHREG",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      { "name": "", "type": "address", "internalType": "contract CHREGv1" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "PRICE",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      { "name": "", "type": "address", "internalType": "contract PRICEv1" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "ROLES",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      { "name": "", "type": "address", "internalType": "contract ROLESv1" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "TRSRY",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      { "name": "", "type": "address", "internalType": "contract TRSRYv1" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "VERSION",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      { "name": "major", "type": "uint8", "internalType": "uint8" },
+      { "name": "minor", "type": "uint8", "internalType": "uint8" }
+    ],
+    "stateMutability": "pure"
+  },
+  {
+    "name": "adjustNextYield",
+    "type": "function",
+    "inputs": [
+      { "name": "newNextYield", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "auctioneer",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      { "name": "", "type": "address", "internalType": "contract IBondSDA" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "backingPerToken",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "changeKernel",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "newKernel_",
+        "type": "address",
+        "internalType": "contract Kernel"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "configureDependencies",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "dependencies",
+        "type": "bytes5[]",
+        "internalType": "Keycode[]"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "endEpoch",
+    "type": "function",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "epoch",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint48", "internalType": "uint48" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "epochLength",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint48", "internalType": "uint48" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "getNextYield",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      { "name": "yield", "type": "uint256", "internalType": "uint256" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "getOhmBalanceAndBacking",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      { "name": "balance", "type": "uint256", "internalType": "uint256" },
+      { "name": "backing", "type": "uint256", "internalType": "uint256" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "getReserveBalance",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      { "name": "balance", "type": "uint256", "internalType": "uint256" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "initialize",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "initialReserveBalance",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "initialConversionRate",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      { "name": "initialYield", "type": "uint256", "internalType": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "isActive",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "isShutdown",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "kernel",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      { "name": "", "type": "address", "internalType": "contract Kernel" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "lastConversionRate",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "lastReserveBalance",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "nextYield",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "ohm",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      { "name": "", "type": "address", "internalType": "contract ERC20" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "requestPermissions",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "permissions",
+        "type": "tuple[]",
+        "components": [
+          { "name": "keycode", "type": "bytes5", "internalType": "Keycode" },
+          { "name": "funcSelector", "type": "bytes4", "internalType": "bytes4" }
+        ],
+        "internalType": "struct Permissions[]"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "reserve",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      { "name": "", "type": "address", "internalType": "contract ERC20" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "sReserve",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      { "name": "", "type": "address", "internalType": "contract ERC4626" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "shutdown",
+    "type": "function",
+    "inputs": [
+      {
+        "name": "tokensToTransfer",
+        "type": "address[]",
+        "internalType": "contract ERC20[]"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "teller",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "stateMutability": "view"
+  }
+]

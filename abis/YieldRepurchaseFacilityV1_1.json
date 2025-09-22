@@ -17,23 +17,17 @@
   {
     "name": "KernelAdapter_OnlyKernel",
     "type": "error",
-    "inputs": [
-      { "name": "caller_", "type": "address", "internalType": "address" }
-    ]
+    "inputs": [{ "name": "caller_", "type": "address", "internalType": "address" }]
   },
   {
     "name": "Policy_ModuleDoesNotExist",
     "type": "error",
-    "inputs": [
-      { "name": "keycode_", "type": "bytes5", "internalType": "Keycode" }
-    ]
+    "inputs": [{ "name": "keycode_", "type": "bytes5", "internalType": "Keycode" }]
   },
   {
     "name": "Policy_WrongModuleVersion",
     "type": "error",
-    "inputs": [
-      { "name": "expected_", "type": "bytes", "internalType": "bytes" }
-    ]
+    "inputs": [{ "name": "expected_", "type": "bytes", "internalType": "bytes" }]
   },
   {
     "name": "NextYieldSet",
@@ -72,36 +66,28 @@
     "name": "CHREG",
     "type": "function",
     "inputs": [],
-    "outputs": [
-      { "name": "", "type": "address", "internalType": "contract CHREGv1" }
-    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "contract CHREGv1" }],
     "stateMutability": "view"
   },
   {
     "name": "PRICE",
     "type": "function",
     "inputs": [],
-    "outputs": [
-      { "name": "", "type": "address", "internalType": "contract PRICEv1" }
-    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "contract PRICEv1" }],
     "stateMutability": "view"
   },
   {
     "name": "ROLES",
     "type": "function",
     "inputs": [],
-    "outputs": [
-      { "name": "", "type": "address", "internalType": "contract ROLESv1" }
-    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "contract ROLESv1" }],
     "stateMutability": "view"
   },
   {
     "name": "TRSRY",
     "type": "function",
     "inputs": [],
-    "outputs": [
-      { "name": "", "type": "address", "internalType": "contract TRSRYv1" }
-    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "contract TRSRYv1" }],
     "stateMutability": "view"
   },
   {
@@ -117,9 +103,7 @@
   {
     "name": "adjustNextYield",
     "type": "function",
-    "inputs": [
-      { "name": "newNextYield", "type": "uint256", "internalType": "uint256" }
-    ],
+    "inputs": [{ "name": "newNextYield", "type": "uint256", "internalType": "uint256" }],
     "outputs": [],
     "stateMutability": "nonpayable"
   },
@@ -127,9 +111,7 @@
     "name": "auctioneer",
     "type": "function",
     "inputs": [],
-    "outputs": [
-      { "name": "", "type": "address", "internalType": "contract IBondSDA" }
-    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "contract IBondSDA" }],
     "stateMutability": "view"
   },
   {
@@ -190,9 +172,7 @@
     "name": "getNextYield",
     "type": "function",
     "inputs": [],
-    "outputs": [
-      { "name": "yield", "type": "uint256", "internalType": "uint256" }
-    ],
+    "outputs": [{ "name": "yield", "type": "uint256", "internalType": "uint256" }],
     "stateMutability": "view"
   },
   {
@@ -209,9 +189,7 @@
     "name": "getReserveBalance",
     "type": "function",
     "inputs": [],
-    "outputs": [
-      { "name": "balance", "type": "uint256", "internalType": "uint256" }
-    ],
+    "outputs": [{ "name": "balance", "type": "uint256", "internalType": "uint256" }],
     "stateMutability": "view"
   },
   {
@@ -251,9 +229,7 @@
     "name": "kernel",
     "type": "function",
     "inputs": [],
-    "outputs": [
-      { "name": "", "type": "address", "internalType": "contract Kernel" }
-    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "contract Kernel" }],
     "stateMutability": "view"
   },
   {
@@ -281,9 +257,7 @@
     "name": "ohm",
     "type": "function",
     "inputs": [],
-    "outputs": [
-      { "name": "", "type": "address", "internalType": "contract ERC20" }
-    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "contract ERC20" }],
     "stateMutability": "view"
   },
   {
@@ -307,18 +281,14 @@
     "name": "reserve",
     "type": "function",
     "inputs": [],
-    "outputs": [
-      { "name": "", "type": "address", "internalType": "contract ERC20" }
-    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "contract ERC20" }],
     "stateMutability": "view"
   },
   {
     "name": "sReserve",
     "type": "function",
     "inputs": [],
-    "outputs": [
-      { "name": "", "type": "address", "internalType": "contract ERC4626" }
-    ],
+    "outputs": [{ "name": "", "type": "address", "internalType": "contract ERC4626" }],
     "stateMutability": "view"
   },
   {

@@ -1,6 +1,25 @@
+type Contract @entity(immutable: true) {
+  id: ID!
+  address: Bytes!
+  version: String! # Format: "major.minor"
+  majorVersion: Int!
+  minorVersion: Int!
+  reserveToken: Token!
+}
+
+type Token @entity(immutable: true) {
+  id: ID!
+  address: Bytes!
+  symbol: String!
+  name: String!
+  decimals: Int!
+}
+
 type NextYieldSet @entity(immutable: true) {
   id: Bytes!
-  nextYield: BigInt! # uint256
+  contract: Contract!
+  nextYield: BigInt! # Raw uint256 from contract
+  nextYieldDecimal: BigDecimal! # Adjusted for reserve token decimals
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
@@ -8,8 +27,10 @@ type NextYieldSet @entity(immutable: true) {
 
 type RepoMarket @entity(immutable: true) {
   id: Bytes!
+  contract: Contract!
   marketId: BigInt! # uint256
-  bidAmount: BigInt! # uint256
+  bidAmount: BigInt! # Raw uint256 from contract
+  bidAmountDecimal: BigDecimal! # Adjusted for reserve token decimals
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
@@ -17,7 +38,7 @@ type RepoMarket @entity(immutable: true) {
 
 type Shutdown @entity(immutable: true) {
   id: Bytes!
-
+  contract: Contract!
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!

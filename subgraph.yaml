@@ -5,12 +5,12 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum
-    name: YieldRepurchaseFacility
+    name: YieldRepurchaseFacilityV1_0
     network: mainnet
     source:
-      address: "0x271e35a8555a62F6bA76508E85dfD76D580B0692"
+      address: "0x30A967eB957E5B1eE053B75F1A57ea6bfb2e907E"
       abi: YieldRepurchaseFacility
-      startBlock: 21814037
+      startBlock: 20793883
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.9
@@ -22,6 +22,58 @@ dataSources:
       abis:
         - name: YieldRepurchaseFacility
           file: ./abis/YieldRepurchaseFacility.json
+      eventHandlers:
+        - event: NextYieldSet(uint256)
+          handler: handleNextYieldSet
+        - event: RepoMarket(uint256,uint256)
+          handler: handleRepoMarket
+        - event: Shutdown()
+          handler: handleShutdown
+      file: ./src/yield-repurchase-facility.ts
+  - kind: ethereum
+    name: YieldRepurchaseFacilityV1_1
+    network: mainnet
+    source:
+      address: "0xcaA3d3E653A626e2656d2E799564fE952D39d855"
+      abi: YieldRepurchaseFacilityV1_1
+      startBlock: 21216653
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - NextYieldSet
+        - RepoMarket
+        - Shutdown
+      abis:
+        - name: YieldRepurchaseFacilityV1_1
+          file: ./abis/YieldRepurchaseFacilityV1_1.json
+      eventHandlers:
+        - event: NextYieldSet(uint256)
+          handler: handleNextYieldSet
+        - event: RepoMarket(uint256,uint256)
+          handler: handleRepoMarket
+        - event: Shutdown()
+          handler: handleShutdown
+      file: ./src/yield-repurchase-facility.ts
+  - kind: ethereum
+    name: YieldRepurchaseFacilityV1_2
+    network: mainnet
+    source:
+      address: "0x271e35a8555a62F6bA76508E85dfD76D580B0692"
+      abi: YieldRepurchaseFacilityV1_1
+      startBlock: 21814037
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - NextYieldSet
+        - RepoMarket
+        - Shutdown
+      abis:
+        - name: YieldRepurchaseFacilityV1_1
+          file: ./abis/YieldRepurchaseFacilityV1_1.json
       eventHandlers:
         - event: NextYieldSet(uint256)
           handler: handleNextYieldSet

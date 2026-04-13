@@ -65,7 +65,7 @@ src/utils/
 
 ### Prerequisites
 
-- Node.js 16+
+- Node.js 24+
 - Yarn
 - Graph CLI
 
